@@ -16,5 +16,6 @@ var App = {
 }
 
 m.route(document.body, '/cs.*', {
-  '/:category': App
+  '/:category': App,
+  '/:category/:start': App
 })

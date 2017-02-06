@@ -10,13 +10,15 @@ function getText(node, selector){
 
 var Arxiv = {
   articles : [],
-  fetch(query){
-    console.log(query)
+  resultsNum : 30,
+  fetch(query, start){
     m.request({
       method: 'GET',
       url: 'http://export.arxiv.org/api/query',
       data: { search_query: query,
-              sortBy: 'submittedDate' },
+              sortBy: 'submittedDate',
+              start,
+              max_results: Arxiv.resultsNum},
       deserialize: content => (new DOMParser()).parseFromString(content, 'application/xml')
     })
     .then(xml => {

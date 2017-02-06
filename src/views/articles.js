@@ -1,14 +1,17 @@
 import m from "mithril"
 import Arxiv from "../models/arxiv"
+import Pager from "./pager"
 
 var Articles = {
   oninit(vnode) {
     let categories = vnode.attrs.category.split("+")
     let query = categories.map(e => `cat:${e}`).join(" OR ")
-    Arxiv.fetch(query)
+    Arxiv.fetch(query, vnode.attrs.start || 0)
   },
-  view(){
-    return <main class="fl w-80 ph2">{
+  view(vnode){
+    return <main class="fl w-80 ph2">
+    <Pager {...vnode.attrs} />
+    {
       Arxiv.articles.map(article =>
         <article class="bb b--black-60 pa2">
           <header>
