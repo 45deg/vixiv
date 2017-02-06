@@ -42,7 +42,7 @@ var Arxiv = {
         category: [...entry.querySelectorAll('category')]
                     .map(cat => cat.getAttribute('term'))
       }))
-      Arxiv.totalNum = xml.querySelector('opensearch:totalResults').innerHTML
+      Arxiv.totalNum = parseInt(xml.querySelector('totalResults').innerHTML)
       Arxiv.waiting = false
       Arxiv.start   = start
     })
