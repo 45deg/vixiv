@@ -1,6 +1,7 @@
 import m from "mithril"
 import Arxiv from "../models/arxiv"
 import Pager from "./pager"
+import Config from "../models/config"
 
 var Articles = {
   oninit(vnode) {
@@ -22,12 +23,12 @@ var Articles = {
             </h2>
             <div class="dark-green ma0 f6">{ article.author.join(', ') }</div>
           </header>
-          <p class="serif ma2">
+          { Config.summaryShow && <p class="serif ma2">
             { article.summary }
             <span class="ml2">
-              <a href={ 'https://translate.google.co.jp/#auto/ja/' + encodeURIComponent(article.summary) }>translate</a>
+              <a href={ `https://translate.google.co.jp/#auto/${Config.language}/${encodeURIComponent(article.summary)}` }>translate</a>
             </span>
-          </p>
+          </p>}
           <footer>
             <p class="ma0">Category: {
               article.category.join(', ')

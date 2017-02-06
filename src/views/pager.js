@@ -1,5 +1,6 @@
 import m from "mithril"
 import Arxiv from "../models/arxiv"
+import Config from "../models/config"
 
 var Pager = {
   onclick(category, start){
@@ -19,6 +20,8 @@ var Pager = {
       }
       <span>Page {page}</span>
       <a href={`#!/${category}/${next}`} onclick={() => Pager.onclick(category, next)}>Next</a>
+      <input type="checkbox" checked={Config.summaryShow}
+                             onchange={m.withAttr("checked", Config.setSummaryShow)}/>
     </nav>
   }
 }
