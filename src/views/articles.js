@@ -8,7 +8,7 @@ var Articles = {
     Arxiv.fetch(Arxiv.start)
   },
   view(){
-    return <main class="fl w-80 ph2">
+    return <main>
     <Pager />
     <section class={"bt b--black-60 pb2 " + (Arxiv.waiting ? "o-50" : "")}>
     {

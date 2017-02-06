@@ -1,6 +1,5 @@
 // index.js
 import m from "mithril"
-import Navigation from "./views/navigation"
 import Articles from "./views/articles"
 import Arxiv from "./models/arxiv"
 
@@ -15,7 +14,6 @@ var App = {
     return <div class="ph5-ns">
       <h1>Read Latest Papers from arXiv!</h1>
       <div>
-        <Navigation />
         <Articles />
       </div>
     </div>
