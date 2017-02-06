@@ -10,8 +10,10 @@ function getText(node, selector){
 
 var Arxiv = {
   articles : [],
-  resultsNum : 30,
+  resultsNum : 15,
+  waiting: false,
   fetch(query, start){
+    Arxiv.waiting = true
     m.request({
       method: 'GET',
       url: 'http://export.arxiv.org/api/query',
@@ -23,7 +25,6 @@ var Arxiv = {
     })
     .then(xml => {
       let entries = [...xml.querySelectorAll('entry')];
-      console.log(entries)
       Arxiv.articles = entries.map(entry => ({
         title: getText(entry, 'title'),
         summary : getText(entry, 'summary').replace(/\r?\n/g, ''),
@@ -34,6 +35,7 @@ var Arxiv = {
         category: [...entry.querySelectorAll('category')]
                     .map(cat => cat.getAttribute('term'))
       }))
+      Arxiv.waiting = false
     })
   }
 }

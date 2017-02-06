@@ -12,6 +12,7 @@ var Articles = {
   view(vnode){
     return <main class="fl w-80 ph2">
     <Pager {...vnode.attrs} />
+    <section class={Arxiv.waiting ? "o-50" : ""}>
     {
       Arxiv.articles.map(article =>
         <article class="bb b--black-60 pa2">
@@ -36,7 +37,9 @@ var Articles = {
           </footer>
         </article>
       )
-    }</main>
+    }
+    </section>
+    </main>
   }
 }
 
