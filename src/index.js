@@ -1,5 +1,5 @@
 // index.js
-var m = require("mithril")
+import m from "mithril"
 
 function getTexts(node, selector) {
   return [...node.querySelectorAll(selector)]
@@ -46,13 +46,16 @@ var App = {
         </div>
         <div class="fl w-80 ph2">{
           Data.articles.map(article =>
-            <article class="bb b--black-60 pa2 f6">
+            <article class="bb b--black-60 pa2">
               <header>
                 <p class="ma0"><time class="b">{ article.published }</time></p>
-                <h2 class="ma0 f4"><a href={article.id}>{article.title}</a></h2>
+                <h2 class="ma0 f4 lh-title">
+                  <a href={article.id} class="blue dim">{article.title}</a>
+                  <a class="black link ml2 hover-red" href={article.pdf}><i class="fa fa-file-pdf-o"></i></a>
+                </h2>
                 <div class="dark-green ma0 f6">{ article.author.join(', ') }</div>
               </header>
-              <p class="f6 serif ma2">
+              <p class="serif ma2">
                 { article.summary }
                 <span class="ml2">
                   <a href={ 'https://translate.google.co.jp/#auto/ja/' + encodeURIComponent(article.summary) }>translate</a>
