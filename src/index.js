@@ -1,6 +1,11 @@
 // index.js
 var m = require("mithril")
 
+function getTexts(node, selector) {
+  return [...node.querySelectorAll(selector)]
+          .map(elem => elem.innerHTML)
+}
+
 var Data = {
   articles : [],
   fetch(){
@@ -15,8 +20,14 @@ var Data = {
       let entries = [...xml.querySelectorAll('entry')];
       console.log(entries)
       Data.articles = entries.map(entry => ({
-        title: entry.querySelector('title').innerHTML,
-        summary : entry.querySelector('summary').innerHTML
+        title: getTexts(entry, 'title')[0],
+        summary : getTexts(entry, 'summary')[0].replace(/\r?\n/g, ''),
+        published: getTexts(entry, 'published')[0],
+        id: getTexts(entry, 'id')[0],
+        author: getTexts(entry, 'author name'),
+        pdf: entry.querySelector('link[title="pdf"]').getAttribute('href'),
+        category: [...entry.querySelectorAll('category')]
+                    .map(cat => cat.getAttribute('term'))
       }))
     })
   }
@@ -29,14 +40,29 @@ var App = {
       <h1>Read Latest Papers from arXiv!</h1>
       <div>
         <div class="fl w-20">
-          <h2 class="mt0 f4 fw7 ttu tracked bb">Category</h2>
-          <h2 class="mt0 f4 fw7 ttu tracked bb">Date</h2>
+          <h2 class="mt0 f4 fw7 bb">Category</h2>
+          <h2 class="mt0 f4 fw7 bb">Date</h2>
+          <h2 class="mt0 f4 fw7 bb">Translation</h2>
         </div>
-        <div class="fl w-80 serif">{
+        <div class="fl w-80 ph2">{
           Data.articles.map(article =>
-            <article class="outline">
-              <h2>{article.title}</h2>
-              <p>{article.summary}</p>
+            <article class="bb b--black-60 pa2 f6">
+              <header>
+                <p class="ma0"><time class="b">{ article.published }</time></p>
+                <h2 class="ma0 f4"><a href={article.id}>{article.title}</a></h2>
+                <div class="dark-green ma0 f6">{ article.author.join(', ') }</div>
+              </header>
+              <p class="f6 serif ma2">
+                { article.summary }
+                <span class="ml2">
+                  <a href={ 'https://translate.google.co.jp/#auto/ja/' + encodeURIComponent(article.summary) }>translate</a>
+                </span>
+              </p>
+              <footer>
+                <p class="ma0">Category: {
+                  article.category.join(', ')
+                }</p>
+              </footer>
             </article>
           )
         }</div>
