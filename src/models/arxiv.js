@@ -17,8 +17,8 @@ var Arxiv = {
   waiting: false,
 
   fetch(start){
+    if(Arxiv.waiting) return
     Arxiv.waiting = true
-    Arxiv.start   = start
     let query = Arxiv.categories.map(e => `cat:${e}`).join(" OR ")
     m.request({
       method: 'GET',
@@ -42,6 +42,7 @@ var Arxiv = {
                     .map(cat => cat.getAttribute('term'))
       }))
       Arxiv.waiting = false
+      Arxiv.start   = start
     })
   },
   setParameters({ categories, start }){

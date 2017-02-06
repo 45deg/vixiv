@@ -8,7 +8,7 @@ var App = {
   oninit(vnode){
     Arxiv.setParameters({
       categories: vnode.attrs.category.split('+'),
-      start: parseInt(vnode.attrs.start)
+      start: parseInt(vnode.attrs.start) || 0
     })
   },
   view(){
