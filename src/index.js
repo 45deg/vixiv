@@ -2,14 +2,21 @@
 import m from "mithril"
 import Navigation from "./views/navigation"
 import Articles from "./views/articles"
+import Arxiv from "./models/arxiv"
 
 var App = {
-  view(vnode){
+  oninit(vnode){
+    Arxiv.setParameters({
+      categories: vnode.attrs.category.split('+'),
+      start: parseInt(vnode.attrs.start)
+    })
+  },
+  view(){
     return <div class="ph5-ns">
       <h1>Read Latest Papers from arXiv!</h1>
       <div>
         <Navigation />
-        <Articles {...vnode.attrs} />
+        <Articles />
       </div>
     </div>
   }

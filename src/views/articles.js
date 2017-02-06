@@ -4,14 +4,12 @@ import Pager from "./pager"
 import Config from "../models/config"
 
 var Articles = {
-  oninit(vnode) {
-    let categories = vnode.attrs.category.split("+")
-    let query = categories.map(e => `cat:${e}`).join(" OR ")
-    Arxiv.fetch(query, vnode.attrs.start || 0)
+  oninit() {
+    Arxiv.fetch(Arxiv.start)
   },
-  view(vnode){
+  view(){
     return <main class="fl w-80 ph2">
-    <Pager {...vnode.attrs} />
+    <Pager />
     <section class={Arxiv.waiting ? "o-50" : ""}>
     {
       Arxiv.articles.map(article =>

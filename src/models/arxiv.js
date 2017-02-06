@@ -9,11 +9,17 @@ function getText(node, selector){
 }
 
 var Arxiv = {
+  // configuration
   articles : [],
   resultsNum : 15,
+  start: 0,
+  categories: [],
   waiting: false,
-  fetch(query, start){
+
+  fetch(start){
     Arxiv.waiting = true
+    Arxiv.start   = start
+    let query = Arxiv.categories.map(e => `cat:${e}`).join(" OR ")
     m.request({
       method: 'GET',
       url: 'http://export.arxiv.org/api/query',
@@ -37,6 +43,10 @@ var Arxiv = {
       }))
       Arxiv.waiting = false
     })
+  },
+  setParameters({ categories, start }){
+    Arxiv.categories = categories
+    Arxiv.start = start
   }
 }
 
