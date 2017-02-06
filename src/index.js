@@ -4,15 +4,17 @@ import Navigation from "./views/navigation"
 import Articles from "./views/articles"
 
 var App = {
-  view(){
+  view(vnode){
     return <div class="ph5-ns">
       <h1>Read Latest Papers from arXiv!</h1>
       <div>
         <Navigation />
-        <Articles />
+        <Articles {...vnode.attrs} />
       </div>
     </div>
   }
 }
 
-m.mount(document.body, App)
+m.route(document.body, '/cs.*', {
+  '/:category': App
+})

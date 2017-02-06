@@ -10,11 +10,12 @@ function getText(node, selector){
 
 var Arxiv = {
   articles : [],
-  fetch(){
+  fetch(query){
+    console.log(query)
     m.request({
       method: 'GET',
       url: 'http://export.arxiv.org/api/query',
-      data: { search_query: 'cat:cs.*',
+      data: { search_query: query,
               sortBy: 'submittedDate' },
       deserialize: content => (new DOMParser()).parseFromString(content, 'application/xml')
     })

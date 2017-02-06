@@ -2,7 +2,11 @@ import m from "mithril"
 import Arxiv from "../models/arxiv"
 
 var Articles = {
-  oninit: Arxiv.fetch,
+  oninit(vnode) {
+    let categories = vnode.attrs.category.split("+")
+    let query = categories.map(e => `cat:${e}`).join(" OR ")
+    Arxiv.fetch(query)
+  },
   view(){
     return <main class="fl w-80 ph2">{
       Arxiv.articles.map(article =>
