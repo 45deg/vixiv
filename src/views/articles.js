@@ -10,7 +10,7 @@ var Articles = {
   view(){
     return <main class="fl w-80 ph2">
     <Pager />
-    <section class={Arxiv.waiting ? "o-50" : ""}>
+    <section class={Arxiv.waiting ? "o-50 pb2" : "pb2"}>
     {
       Arxiv.articles.map(article =>
         <article class="bb b--black-60 pa2">
@@ -37,6 +37,7 @@ var Articles = {
       )
     }
     </section>
+    <Pager />
     </main>
   }
 }
