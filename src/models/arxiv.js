@@ -1,4 +1,7 @@
 import m from "mithril"
+import { getArxivQuery } from "../utils/calender"
+
+const MAX_RESULTS = 500
 
 function getTexts(node, selector) {
   return [...node.querySelectorAll(selector)]
@@ -11,23 +14,22 @@ function getText(node, selector){
 var Arxiv = {
   // configuration
   articles : [],
-  resultsNum : 15,
   totalNum: 0,
-  start: 0,
+  date: null,
   categories: [],
   waiting: false,
 
-  fetch(start){
+  fetch(){
     if(Arxiv.waiting) return
     Arxiv.waiting = true
     let query = Arxiv.categories.map(e => `cat:${e}`).join(" OR ")
+    query = `(${query}) AND submittedDate:[${getArxivQuery(Arxiv.date)}]`
     m.request({
       method: 'GET',
       url: 'http://export.arxiv.org/api/query',
       data: { search_query: query,
               sortBy: 'submittedDate',
-              start,
-              max_results: Arxiv.resultsNum},
+              max_results: MAX_RESULTS},
       deserialize: content => (new DOMParser()).parseFromString(content, 'application/xml')
     })
     .then(xml => {
@@ -44,12 +46,11 @@ var Arxiv = {
       }))
       Arxiv.totalNum = parseInt(xml.querySelector('totalResults').innerHTML)
       Arxiv.waiting = false
-      Arxiv.start   = start
     })
   },
-  setParameters({ categories, start }){
+  setParameters({ categories, date }){
     Arxiv.categories = categories
-    Arxiv.start = start
+    Arxiv.date = date
   }
 }
 

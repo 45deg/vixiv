@@ -4,7 +4,7 @@ import Config from "../models/config"
 
 var Articles = {
   oninit() {
-    Arxiv.fetch(Arxiv.start)
+    Arxiv.fetch()
   },
   view(){
     return <main class={"bt b--black-60 pb2 " + (Arxiv.waiting ? "o-50" : "")}>

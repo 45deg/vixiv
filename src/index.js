@@ -2,12 +2,13 @@
 import m from "mithril"
 import Articles from "./views/articles"
 import Arxiv from "./models/arxiv"
+import { generateCalender } from "./utils/calender"
 
 var App = {
   oninit(vnode){
     Arxiv.setParameters({
       categories: vnode.attrs.category.split('+'),
-      start: parseInt(vnode.attrs.start) || 0
+      date: parseInt(vnode.attrs.date) || generateCalender(1)[0].day
     })
   },
   view(){
@@ -22,5 +23,5 @@ var App = {
 
 m.route(document.body, '/cs.*', {
   '/:category': App,
-  '/:category/:start': App
+  '/:category/:date': App
 })
