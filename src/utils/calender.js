@@ -47,20 +47,25 @@ function generateCalender(number, date = new Date()){
   let targetDate = (date.getUTCHours() < UPDATE_HOUR) ? getPreviousDay(date)
                                                       : new Date(date)
   let calender = []
-  const TIME = `${DEADLINE_HOUR}0000`
   for (let i = 0; i < number; i++) {
-    let targetDateString = targetDate.getUTCMonth() + 1 + '/' +
-                           targetDate.getUTCDate()
-    let from = getPreviousDay(targetDate)
-    let to   = getPreviousDay(from)
     calender.push({
-        day: targetDateString,
-      query: getCanonicalDate(to)   + TIME + '+TO+' +
-             getCanonicalDate(from) + TIME
+      label: `${targetDate.getUTCMonth() + 1}/${targetDate.getUTCDate()}`,
+        day: getCanonicalDate(targetDate)
     })
     targetDate = getPreviousDay(targetDate)
   }
   return calender
 }
 
-module.exports = generateCalender;
+function getArxivQuery(day){
+  const TIME = `${DEADLINE_HOUR}0000`
+
+  let match = /(\d{4})(\d{2})(\d{2})/.exec(day).map(e => parseInt(e))
+  let targetDate = new Date(Date.UTC(match[1], match[2] - 1, match[3]))
+  let from = getPreviousDay(targetDate)
+  let to   = getPreviousDay(from)
+  return [getCanonicalDate(to) + TIME,
+          getCanonicalDate(from) + TIME].join('+TO+')
+}
+
+module.exports = { generateCalender, getArxivQuery }
