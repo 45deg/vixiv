@@ -1,6 +1,7 @@
 // index.js
 import m from "mithril"
 import Articles from "./views/articles"
+import MenuBar from "./views/menubar"
 import Arxiv from "./models/arxiv"
 import { generateCalender } from "./utils/calender"
 
@@ -14,9 +15,8 @@ var App = {
   view(){
     return <div class="ph5-ns">
       <h1>Read Latest Papers from arXiv!</h1>
-      <div>
-        <Articles />
-      </div>
+      <MenuBar />
+      <Articles />
     </div>
   }
 }
