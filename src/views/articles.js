@@ -1,6 +1,5 @@
 import m from "mithril"
 import Arxiv from "../models/arxiv"
-import Pager from "./pager"
 import Config from "../models/config"
 
 var Articles = {
@@ -8,9 +7,7 @@ var Articles = {
     Arxiv.fetch(Arxiv.start)
   },
   view(){
-    return <main>
-    <Pager />
-    <section class={"bt b--black-60 pb2 " + (Arxiv.waiting ? "o-50" : "")}>
+    return <main class={"bt b--black-60 pb2 " + (Arxiv.waiting ? "o-50" : "")}>
     {
       Arxiv.articles.map(article =>
         <article class="bb b--black-60 pa2">
@@ -36,8 +33,6 @@ var Articles = {
         </article>
       )
     }
-    </section>
-    <Pager />
     </main>
   }
 }
