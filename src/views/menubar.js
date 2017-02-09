@@ -1,6 +1,8 @@
 import m from "mithril"
 import Arxiv from "../models/arxiv"
 import Config from "../models/config"
+import CategorySelector from "./category-selector"
+import Category from "../models/category"
 import { generateCalender } from "../utils/calender"
 
 var MenuBar = {
@@ -10,7 +12,8 @@ var MenuBar = {
   },
   view(){
     let category = Arxiv.categories.join('+')
-    return <div class="flex">
+    return <div>
+      <div class="flex">
       <h2 class="ma0 f5 inline">Published At: </h2>
       <nav>
         <ul class="ma0 pa0">{
@@ -26,7 +29,11 @@ var MenuBar = {
         <input type="checkbox" checked={Config.summaryShow} id="toggle-summary"
                        onchange={m.withAttr("checked", Config.setSummaryShow)} />
         <label for="toggle-summary">Show Summary</label>
+        <a href="javascript:void(0)"
+           onclick={() => Category.toggleShow()}>▼ Select Category</a>
       </div>
+      </div>
+      <CategorySelector />
     </div>
   }
 }

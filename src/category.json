@@ -1,0 +1,173 @@
+[{
+  "category" : "Statistics",
+  "abbr" : "stat.*",
+  "sub" : [
+    { "abbr": "stat.AP", "title": "Applications" },
+    { "abbr": "stat.CO", "title": "Computation" },
+    { "abbr": "stat.ML", "title": "Machine Learning" },
+    { "abbr": "stat.ME", "title": "Methodology" },
+    { "abbr": "stat.TH", "title": "Theory" }
+  ]
+},{
+  "category" : "Quantitative Biology",
+  "abbr": "q-bio.*",
+  "sub" : [
+    { "abbr": "q-bio.BM", "title": "Biomolecules" },
+    { "abbr": "q-bio.CB", "title": "Cell Behavior" },
+    { "abbr": "q-bio.GN", "title": "Genomics" },
+    { "abbr": "q-bio.MN", "title": "Molecular Networks" },
+    { "abbr": "q-bio.NC", "title": "Neurons and Cognition" },
+    { "abbr": "q-bio.PE", "title": "Populations and Evolution" },
+    { "abbr": "q-bio.QM", "title": "Quantitative Methods" },
+    { "abbr": "q-bio.SC", "title": "Subcellular Processes" },
+    { "abbr": "q-bio.TO", "title": "Tissues and Organs" },
+    { "abbr": "q-bio.OT", "title": "Other" }
+  ]
+},{
+  "category" : "Computer Science",
+  "abbr" : "cs.*",
+  "sub" : [
+    { "abbr": "cs.AR", "title": "Architecture" },
+    { "abbr": "cs.AI", "title": "Artificial Intelligence" },
+    { "abbr": "cs.CL", "title": "Computation and Language" },
+    { "abbr": "cs.CC", "title": "Computational Complexity" },
+    { "abbr": "cs.CE", "title": "Computational Engineering; Finance; and Science" },
+    { "abbr": "cs.CG", "title": "Computational Geometry" },
+    { "abbr": "cs.GT", "title": "Computer Science and Game Theory" },
+    { "abbr": "cs.CV", "title": "Computer Vision and Pattern Recognition" },
+    { "abbr": "cs.CY", "title": "Computers and Society" },
+    { "abbr": "cs.CR", "title": "Cryptography and Security" },
+    { "abbr": "cs.DS", "title": "Data Structures and Algorithms" },
+    { "abbr": "cs.DB", "title": "Databases" },
+    { "abbr": "cs.DL", "title": "Digital Libraries" },
+    { "abbr": "cs.DM", "title": "Discrete Mathematics" },
+    { "abbr": "cs.DC", "title": "Distributed; Parallel; and Cluster Computing" },
+    { "abbr": "cs.GL", "title": "General Literature" },
+    { "abbr": "cs.GR", "title": "Graphics" },
+    { "abbr": "cs.HC", "title": "Human-Computer Interaction" },
+    { "abbr": "cs.IR", "title": "Information Retrieval" },
+    { "abbr": "cs.IT", "title": "Information Theory" },
+    { "abbr": "cs.LG", "title": "Learning" },
+    { "abbr": "cs.LO", "title": "Logic in Computer Science" },
+    { "abbr": "cs.MS", "title": "Mathematical Software" },
+    { "abbr": "cs.MA", "title": "Multiagent Systems" },
+    { "abbr": "cs.MM", "title": "Multimedia" },
+    { "abbr": "cs.NI", "title": "Networking and Internet Architecture" },
+    { "abbr": "cs.NE", "title": "Neural and Evolutionary Computing" },
+    { "abbr": "cs.NA", "title": "Numerical Analysis" },
+    { "abbr": "cs.OS", "title": "Operating Systems" },
+    { "abbr": "cs.PF", "title": "Performance" },
+    { "abbr": "cs.PL", "title": "Programming Languages" },
+    { "abbr": "cs.RO", "title": "Robotics" },
+    { "abbr": "cs.SE", "title": "Software Engineering" },
+    { "abbr": "cs.SD", "title": "Sound" },
+    { "abbr": "cs.SC", "title": "Symbolic Computation" },
+    { "abbr": "cs.OH", "title": "Other" }
+  ]
+},{
+  "category" : "Nonlinear Sciences",
+  "abbr" : "nlin.*",
+  "sub" : [
+    { "abbr": "nlin.AO", "title": "Adaptation and Self-Organizing Systems" },
+    { "abbr": "nlin.CG", "title": "Cellular Automata and Lattice Gases" },
+    { "abbr": "nlin.CD", "title": "Chaotic Dynamics" },
+    { "abbr": "nlin.SI", "title": "Exactly Solvable and Integrable Systems" },
+    { "abbr": "nlin.PS", "title": "Pattern Formation and Solitons" }
+  ]
+},{
+  "category" : "Mathematics",
+  "abbr" : "math.*",
+  "sub" : [
+    { "abbr": "math.AG", "title": "Algebraic Geometry" },
+    { "abbr": "math.AT", "title": "Algebraic Topology" },
+    { "abbr": "math.AP", "title": "Analysis of PDEs" },
+    { "abbr": "math.CT", "title": "Category Theory" },
+    { "abbr": "math.CA", "title": "Classical Analysis and ODEs" },
+    { "abbr": "math.CO", "title": "Combinatorics" },
+    { "abbr": "math.AC", "title": "Commutative Algebra" },
+    { "abbr": "math.CV", "title": "Complex Variables" },
+    { "abbr": "math.DG", "title": "Differential Geometry" },
+    { "abbr": "math.DS", "title": "Dynamical Systems" },
+    { "abbr": "math.FA", "title": "Functional Analysis" },
+    { "abbr": "math.GM", "title": "General Mathematics" },
+    { "abbr": "math.GN", "title": "General Topology" },
+    { "abbr": "math.GT", "title": "Geometric Topology" },
+    { "abbr": "math.GR", "title": "Group Theory" },
+    { "abbr": "math.HO", "title": "History and Overview" },
+    { "abbr": "math.IT", "title": "Information Theory" },
+    { "abbr": "math.KT", "title": "K-Theory and Homology" },
+    { "abbr": "math.LO", "title": "Logic" },
+    { "abbr": "math.MP", "title": "Mathematical Physics" },
+    { "abbr": "math.MG", "title": "Metric Geometry" },
+    { "abbr": "math.NT", "title": "Number Theory" },
+    { "abbr": "math.NA", "title": "Numerical Analysis" },
+    { "abbr": "math.OA", "title": "Operator Algebras" },
+    { "abbr": "math.OC", "title": "Optimization and Control" },
+    { "abbr": "math.PR", "title": "Probability" },
+    { "abbr": "math.QA", "title": "Quantum Algebra" },
+    { "abbr": "math.RT", "title": "Representation Theory" },
+    { "abbr": "math.RA", "title": "Rings and Algebras" },
+    { "abbr": "math.SP", "title": "Spectral Theory" },
+    { "abbr": "math.ST", "title": "Statistics" },
+    { "abbr": "math.SG", "title": "Symplectic Geometry" }
+  ]
+},{
+  "category" : "Physics (Condensed Matter)",
+  "abbr" : "math.*",
+  "sub" : [
+    { "abbr": "cond-mat.dis-nn", "title": "Disordered Systems and Neural Networks" },
+    { "abbr": "cond-mat.mes-hall", "title": "Mesoscopic Systems and Quantum Hall Effect" },
+    { "abbr": "cond-mat.mtrl-sci", "title": "Materials Science" },
+    { "abbr": "cond-mat.soft", "title": "Soft Condensed Matter" },
+    { "abbr": "cond-mat.stat-mech", "title": "Statistical Mechanics" },
+    { "abbr": "cond-mat.str-el", "title": "Strongly Correlated Electrons" },
+    { "abbr": "cond-mat.supr-con", "title": "Superconductivity" },
+    { "abbr": "cond-mat.other", "title": "Other" }
+  ]
+},{
+  "category" : "High Energy Physics",
+  "abbr" : "hep-*",
+  "sub" : [
+    { "abbr": "hep-ex", "title": "Experiment" },
+    { "abbr": "hep-lat", "title": "Lattice" },
+    { "abbr": "hep-ph", "title": "Phenomenology" },
+    { "abbr": "hep-th", "title": "Theory" }
+  ]
+},{
+  "category" : "Physics",
+  "abbr" : "physics.*",
+  "sub" : [
+    { "abbr": "physics.acc-ph", "title": "Accelerator Physics" },
+    { "abbr": "physics.ao-ph", "title": "Atmospheric and Oceanic Physics" },
+    { "abbr": "physics.atom-ph", "title": "Atomic Physics" },
+    { "abbr": "physics.atm-clus", "title": "Atomic and Molecular Clusters" },
+    { "abbr": "physics.bio-ph", "title": "Biological Physics" },
+    { "abbr": "physics.chem-ph", "title": "Chemical Physics" },
+    { "abbr": "physics.class-ph", "title": "Classical Physics" },
+    { "abbr": "physics.comp-ph", "title": "Computational Physics" },
+    { "abbr": "physics.data-an", "title": "Data Analysis; Statistics and Probability" },
+    { "abbr": "physics.flu-dyn", "title": "Fluid Dynamics" },
+    { "abbr": "physics.gen-ph", "title": "General Physics" },
+    { "abbr": "physics.geo-ph", "title": "Geophysics" },
+    { "abbr": "physics.hist-ph", "title": "History of Physics" },
+    { "abbr": "physics.ins-det", "title": "Instrumentation and Detectors" },
+    { "abbr": "physics.med-ph", "title": "Medical Physics" },
+    { "abbr": "physics.optics", "title": "Optics" },
+    { "abbr": "physics.ed-ph", "title": "Physics Education" },
+    { "abbr": "physics.soc-ph", "title": "Physics and Society" },
+    { "abbr": "physics.plasm-ph", "title": "Plasma Physics" },
+    { "abbr": "physics.pop-ph", "title": "Popular Physics" },
+    { "abbr": "physics.space-ph", "title": "Space Physics" }
+  ]
+},{
+  "category" : "Physics (Others)",
+  "abbr" : null,
+  "sub" : [
+    { "abbr": "astro-ph", "title": "Astrophysics" },
+    { "abbr": "gr-qc", "title": "General Relativity and Quantum Cosmology" },
+    { "abbr": "math-ph", "title": "Mathematical Physics" },
+    { "abbr": "nucl-ex", "title": "Nuclear Experiment" },
+    { "abbr": "nucl-th", "title": "Nuclear Theory" },
+    { "abbr": "quant-ph", "title": "Quantum Physics" }
+  ]
+}]
