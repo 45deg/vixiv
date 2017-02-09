@@ -1,5 +1,6 @@
 import m from "mithril"
 import Arxiv from "../models/arxiv"
+import Config from "../models/config"
 import { generateCalender } from "../utils/calender"
 
 var MenuBar = {
@@ -19,8 +20,13 @@ var MenuBar = {
                onclick={() => MenuBar.handleClick(day)}>{ label }</a>
           </li>
         )
-      }
-      </ul></nav>
+        }</ul>
+      </nav>
+      <div class="fr">
+        <input type="checkbox" checked={Config.summaryShow} id="toggle-summary"
+                       onchange={m.withAttr("checked", Config.setSummaryShow)} />
+        <label for="toggle-summary">Show Summary</label>
+      </div>
     </div>
   }
 }
