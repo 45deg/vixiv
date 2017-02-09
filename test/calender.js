@@ -69,14 +69,14 @@ describe('getArxivQuery', () => {
   let date = new Date()
 
   it('normal', () => {
-    assert.equal(getArxivQuery("20170208"), "20170206190000+TO+20170207190000")
+    assert.equal(getArxivQuery("20170208"), "20170206190000 TO 20170207190000")
   })
 
   it('over weekends', () => {
-    assert.equal(getArxivQuery("20170207"), "20170203190000+TO+20170206190000")
+    assert.equal(getArxivQuery("20170207"), "20170203190000 TO 20170206190000")
   })
 
   it('across month', () => {
-    assert.equal(getArxivQuery("20170202"), "20170131190000+TO+20170201190000")
+    assert.equal(getArxivQuery("20170202"), "20170131190000 TO 20170201190000")
   })
 })

@@ -65,7 +65,7 @@ function getArxivQuery(day){
   let from = getPreviousDay(targetDate)
   let to   = getPreviousDay(from)
   return [getCanonicalDate(to) + TIME,
-          getCanonicalDate(from) + TIME].join('+TO+')
+          getCanonicalDate(from) + TIME].join(' TO ')
 }
 
 module.exports = { generateCalender, getArxivQuery }
