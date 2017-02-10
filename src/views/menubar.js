@@ -32,8 +32,9 @@ var MenuBar = {
           }</ul>
         </nav>
         <div class="fr">
-          <input type="checkbox" checked={Config.summaryShow} id="toggle-summary"
-                         onchange={m.withAttr("checked", Config.setSummaryShow)} />
+          <input type="checkbox" class="mr1"
+                 checked={Config.summaryShow} id="toggle-summary"
+                 onchange={m.withAttr("checked", Config.setSummaryShow)} />
           <label for="toggle-summary">Show Summary</label>
           <a href="javascript:void(0)" class="ml2 link blue"
              onclick={MenuBar.toggleSelector}>
