@@ -15,7 +15,7 @@ var Articles = {
             <p class="ma0"><time class="b">{ article.published }</time></p>
             <h2 class="ma0 f4 lh-title">
               <a href={article.id} class="blue dim">{article.title}</a>
-              <a class="black link ml2 hover-red" href={article.pdf}><i class="fa fa-file-pdf-o"></i></a>
+              <a class="link ml2" href={article.pdf}>[PDF]</a>
             </h2>
             <div class="dark-green ma0 f6">{ article.author.join(', ') }</div>
           </header>
