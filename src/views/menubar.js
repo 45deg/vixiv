@@ -10,28 +10,35 @@ var MenuBar = {
     Arxiv.date = day
     Arxiv.fetch()
   },
+  toggleSelector(){
+    let open = Category.toggleShow()
+    if(!open) {
+      Category.submit()
+    }
+  },
   view(){
     let category = Arxiv.categories.join('+')
     return <div>
-      <div class="flex">
-      <h2 class="ma0 f5 inline">Published At: </h2>
-      <nav>
-        <ul class="ma0 pa0">{
-        generateCalender(5).map(({ label, day }) =>
-          <li class="di ml2">
-            <a href={`#!/${category}/${day}`} class="blue"
-               onclick={() => MenuBar.handleClick(day)}>{ label }</a>
-          </li>
-        )
-        }</ul>
-      </nav>
-      <div class="fr">
-        <input type="checkbox" checked={Config.summaryShow} id="toggle-summary"
-                       onchange={m.withAttr("checked", Config.setSummaryShow)} />
-        <label for="toggle-summary">Show Summary</label>
-        <a href="javascript:void(0)"
-           onclick={() => Category.toggleShow()}>▼ Select Category</a>
-      </div>
+      <div class="cf pv1">
+        <h2 class="ma0 f5 inline fl">Published At: </h2>
+        <nav>
+          <ul class="ma0 pa0">{
+          generateCalender(5).map(({ label, day }) =>
+            <li class="di ml2 fl">
+              <a href={`#!/${category}/${day}`} class="blue"
+                 onclick={() => MenuBar.handleClick(day)}>{ label }</a>
+            </li>
+          )
+          }</ul>
+        </nav>
+        <div class="fr">
+          <input type="checkbox" checked={Config.summaryShow} id="toggle-summary"
+                         onchange={m.withAttr("checked", Config.setSummaryShow)} />
+          <label for="toggle-summary">Show Summary</label>
+          <a href="javascript:void(0)" class="ml2 link blue"
+             onclick={MenuBar.toggleSelector}>
+              {Category.show ? "▼" : "▶"} Select Category</a>
+        </div>
       </div>
       <CategorySelector />
     </div>
