@@ -112,28 +112,6 @@
     { "abbr": "math.SG", "title": "Symplectic Geometry" }
   ]
 },{
-  "category" : "Physics (Condensed Matter)",
-  "abbr" : "math.*",
-  "sub" : [
-    { "abbr": "cond-mat.dis-nn", "title": "Disordered Systems and Neural Networks" },
-    { "abbr": "cond-mat.mes-hall", "title": "Mesoscopic Systems and Quantum Hall Effect" },
-    { "abbr": "cond-mat.mtrl-sci", "title": "Materials Science" },
-    { "abbr": "cond-mat.soft", "title": "Soft Condensed Matter" },
-    { "abbr": "cond-mat.stat-mech", "title": "Statistical Mechanics" },
-    { "abbr": "cond-mat.str-el", "title": "Strongly Correlated Electrons" },
-    { "abbr": "cond-mat.supr-con", "title": "Superconductivity" },
-    { "abbr": "cond-mat.other", "title": "Other" }
-  ]
-},{
-  "category" : "High Energy Physics",
-  "abbr" : "hep-*",
-  "sub" : [
-    { "abbr": "hep-ex", "title": "Experiment" },
-    { "abbr": "hep-lat", "title": "Lattice" },
-    { "abbr": "hep-ph", "title": "Phenomenology" },
-    { "abbr": "hep-th", "title": "Theory" }
-  ]
-},{
   "category" : "Physics",
   "abbr" : "physics.*",
   "sub" : [
@@ -158,6 +136,28 @@
     { "abbr": "physics.plasm-ph", "title": "Plasma Physics" },
     { "abbr": "physics.pop-ph", "title": "Popular Physics" },
     { "abbr": "physics.space-ph", "title": "Space Physics" }
+  ]
+},{
+  "category" : "Physics (Condensed Matter)",
+  "abbr" : "cond-mat.*",
+  "sub" : [
+    { "abbr": "cond-mat.dis-nn", "title": "Disordered Systems and Neural Networks" },
+    { "abbr": "cond-mat.mes-hall", "title": "Mesoscopic Systems and Quantum Hall Effect" },
+    { "abbr": "cond-mat.mtrl-sci", "title": "Materials Science" },
+    { "abbr": "cond-mat.soft", "title": "Soft Condensed Matter" },
+    { "abbr": "cond-mat.stat-mech", "title": "Statistical Mechanics" },
+    { "abbr": "cond-mat.str-el", "title": "Strongly Correlated Electrons" },
+    { "abbr": "cond-mat.supr-con", "title": "Superconductivity" },
+    { "abbr": "cond-mat.other", "title": "Other" }
+  ]
+},{
+  "category" : "High Energy Physics",
+  "abbr" : "hep-*",
+  "sub" : [
+    { "abbr": "hep-ex", "title": "Experiment" },
+    { "abbr": "hep-lat", "title": "Lattice" },
+    { "abbr": "hep-ph", "title": "Phenomenology" },
+    { "abbr": "hep-th", "title": "Theory" }
   ]
 },{
   "category" : "Physics (Others)",
